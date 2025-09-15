@@ -17,7 +17,6 @@ Node* findMiddle(Node* head) {
 }
 
 int main() {
-    // Create linked list: 1->2->3->4->5
     Node* head = new Node(1);
     head->next = new Node(2);
     head->next->next = new Node(3);
@@ -28,7 +27,6 @@ int main() {
     if (middle)
         std::cout << middle->data << std::endl;
 
-    // Free memory
     Node* curr = head;
     while (curr) {
         Node* temp = curr;
