@@ -6,7 +6,7 @@ struct Node {
     Node(int val) : data(val), next(nullptr) {}
 };
 
-// Function to insert node at the end
+
 void append(Node*& head, int val) {
     Node* newNode = new Node(val);
     if (!head) {
@@ -19,17 +19,15 @@ void append(Node*& head, int val) {
     curr->next = newNode;
 }
 
-// Function to count and delete all occurrences of key
+
 int countAndDelete(Node*& head, int key) {
     int count = 0;
-    // Remove occurrences at the head
     while (head && head->data == key) {
         Node* temp = head;
         head = head->next;
         delete temp;
         count++;
     }
-    // Remove occurrences in the rest of the list
     Node* curr = head;
     while (curr && curr->next) {
         if (curr->next->data == key) {
@@ -44,7 +42,6 @@ int countAndDelete(Node*& head, int key) {
     return count;
 }
 
-// Function to print the linked list
 void printList(Node* head) {
     while (head) {
         std::cout << head->data;
@@ -56,7 +53,6 @@ void printList(Node* head) {
 }
 
 int main() {
-    // Example input: 1->2->1->2->1->3->1, key: 1
     Node* head = nullptr;
     int arr[] = {1, 2, 1, 2, 1, 3, 1};
     for (int val : arr)
@@ -72,7 +68,6 @@ int main() {
     std::cout << "Updated Linked List: ";
     printList(head);
 
-    // Free remaining nodes
     while (head) {
         Node* temp = head;
         head = head->next;
